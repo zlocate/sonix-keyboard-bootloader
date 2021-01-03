@@ -3,11 +3,7 @@
 #include "proxy.h"
 #include "config.h"
 
-#include "SN32F260.h"
-
 #define SECOND_STAGE_VECTOR (void*)0x200
-#define BOOT0_GPIO SN_GPIO3
-#define BOOT0_PIN 5
 
 /* Jumps to the next stage given its vector */
 __attribute__((noreturn)) static void jump_vector(uint32_t *vector) {
@@ -94,7 +90,7 @@ static int key_held(void) {
 void _start(void) {
     if (!firmware_valid() || bootloader_requested() || boot0_low() || key_held()) {
         /* Jump to the embedded bootloader */
-        void (*recovery)() = (void*)0x1fff0009;
+        void (*recovery)() = (void*)SN32_BOOTLOADER_ADDRESS;
         recovery();
     } else {
         /* Jump to the firmware */
