@@ -1,18 +1,11 @@
 # A bootloader for SN32F2x-based keyboards
-
-Based on [STM32duino-bootloader](https://github.com/rogerclarkmelbourne/STM32duino-bootloader).
-
-## Known issues
-
-- JTAG or SWD pins used as part of keyboard matrix can't be used for bootloader entry
-
 ## Compiling
 
 A recent version of the [GNU Arm Embedded Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm) is recommended for building this project. In order to build, execute the following commands:
 
 ```
 mkdir build && cd build
-cmake ..
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/gcc.cmake
 make -j8
 ```
 
