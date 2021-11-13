@@ -145,6 +145,17 @@
 #define BLKEY_INPUT_PIN 4
 #define BLKEY_OUTPUT_GPIO SN_GPIO0
 #define BLKEY_OUTPUT_PIN 12
+#elif defined(TARGET_KEYCHRON_K7_RGB_OPTICAL) // SN32F248B
+#include "SN32F240B.h"
+#define SN32_BOOTLOADER_ADDRESS 0x1FFF0301
+#define BOOT0_GPIO SN_GPIO2
+#define BOOT0_PIN 2
+/* Escape */
+#define BLKEY_INPUT_GPIO SN_GPIO0
+#define BLKEY_INPUT_PIN 8
+#define BLKEY_OUTPUT_GPIO SN_GPIO3
+#define BLKEY_OUTPUT_PIN 11
+#define PIN_HIGH_WHEN_KEY_HELD 1
 #else
 #error Not configured for this target.
 #endif

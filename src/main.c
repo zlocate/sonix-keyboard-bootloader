@@ -81,7 +81,11 @@ static int key_held(void) {
     /* Read the input */
     res = BLKEY_INPUT_GPIO->DATA & (1 << BLKEY_INPUT_PIN);
 
+    #if defined(PIN_HIGH_WHEN_KEY_HELD)
+    return res;
+    #else
     return !res;
+    #endif
 #else
     return 0;
 #endif

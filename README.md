@@ -89,3 +89,7 @@ Suppose you want to enter the bootloader when K_4, the middle button in the matr
     #define BL_INPUT_BANK GPIOA
     #define BL_INPUT_PIN 4
 ```
+For matrices with optical switches when key is held the read pin values is 1 instead of 0 thus return value should be inverted. Use define to revert it. See KEYCHRON_K7_RGB_OPTICAL example.
+```
+#define PIN_HIGH_WHEN_KEY_HELD 1
+```
