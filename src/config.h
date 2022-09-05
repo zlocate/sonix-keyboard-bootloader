@@ -207,6 +207,16 @@
 #define BLKEY_OUTPUT_GPIO SN_GPIO2
 #define BLKEY_OUTPUT_PIN 4
 #define PIN_HIGH_WHEN_KEY_HELD 1
+#elif defined(TARGET_SHARKOON_SGK50S4) // SN32F260
+ #include "SN32F260.h"
+#define SN32_BOOTLOADER_ADDRESS 0x1FFF0009
+#define BOOT0_GPIO SN_GPIO3
+#define BOOT0_PIN 5
+/* Backspace */
+#define BLKEY_INPUT_GPIO SN_GPIO1
+#define BLKEY_INPUT_PIN 1
+#define BLKEY_OUTPUT_GPIO SN_GPIO3
+#define BLKEY_OUTPUT_PIN 2
 #else
 #error Not configured for this target.
 #endif
