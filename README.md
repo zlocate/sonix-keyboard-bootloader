@@ -9,6 +9,7 @@ cmake .. -DCMAKE_TOOLCHAIN_FILE=../toolchain/gcc.cmake
 make -j8
 ```
 
+
 ## Flashing the bootloader
 
 The bootloader is flashed with the [Womier Flasher](https://github.com/xyzz/womier-flasher).
